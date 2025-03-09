@@ -1,12 +1,101 @@
-# React + Vite
+# Controler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Controler is a modern, interactive portfolio website built with React and Three.js. It features a dynamic theme toggle, interactive 3D elements, and a responsive design.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/controler.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd controler
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+## Usage
+
+To start the development server, run:
+```sh
+npm run dev
+```
+
+To build the project for production, run:
+```sh
+npm run build
+```
+
+To preview the production build, run:
+```sh
+npm run preview
+```
+
+## Features
+
+- **Theme Toggle**: Switch between light and dark themes.
+- **Interactive 3D Elements**: Utilizes Three.js for 3D graphics.
+- **Responsive Design**: Optimized for various screen sizes.
+- **Dynamic Content**: Easily update projects and other content via the `data.jsx` file.
+
+## Project Structure
+
+```
+controler/
+├── public/
+│   ├── adamsbridge.hdr
+│   ├── Inter-Regular.woff
+│   ├── NightSkyHDRI003_2K-HDR.exr
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── BallController.jsx
+│   │   ├── Clump.jsx
+│   │   ├── ContactMe.jsx
+│   │   ├── Footer.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── Pointer.jsx
+│   │   ├── ProjectsSection.jsx
+│   │   └── ThemeToggleButton.jsx
+│   ├── animations/
+│   │   └── variants.js
+│   ├── data.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── App.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Three.js**: JavaScript library for 3D graphics.
+- **Framer Motion**: Library for animations.
+- **Styled Components**: Library for styling React components.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Vite**: Next-generation frontend tooling.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

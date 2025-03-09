@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.projects-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
