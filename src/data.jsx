@@ -1,6 +1,24 @@
 import { title } from "framer-motion/client";
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
+import { 
+  SiReact, 
+  SiFlutter, 
+  SiLaravel, 
+  SiDjango, 
+  SiNodedotjs, 
+  SiWebgl,
+} from 'react-icons/si';
+
+const skills_list = [
+    { name: "React.js", level: 85, icon: SiReact },
+    { name: "Flutter", level: 90, icon: SiFlutter },
+    { name: "Laravel", level: 95, icon: SiLaravel },
+    { name: "Django", level: 90, icon: SiDjango },
+    { name: "Node.js", level: 90, icon: SiNodedotjs },
+    { name: "WebGL", level: 80, icon: SiWebgl }
+  ];
+
 const canvasSettings = {
   background: "#dfdfdf",
   physics: {
@@ -57,7 +75,7 @@ const projects = [
     id: 1,
     title: "my portfolio",
     description: "A modern, interactive portfolio website built with React and Three.js.",
-    image: "/pro1.png",
+    image: "./pro1.png",
     technologies: [
       "React",
       "Three.js",
@@ -84,7 +102,7 @@ const projects = [
     id: 3,
     title: "Instruction Repository System",
     description: "A comprehensive IR System designed to efficiently manage and retrieve.\"privet project\"",
-    image: "/pro3.png",
+    image: "./pro3.png",
     technologies: [
       "React",
       "Django",
@@ -122,9 +140,9 @@ const socialLinks =    [ {
 const layout = {
   hero: {
     title: "Kaleb Adem",
-    subtitle: "Full Stack Developer",
+    subtitle: "Full-Stack & Smart Agent Developer",
     quote: "Transforming ideas into elegant code, one line at a time.",
-    avatar: "/photo_2025-03-09_11-18-42.jpg"
+    avatar: "./photo_2025-03-09_11-18-42.jpg"
   },
   projects: {
     title: "Featured Projects",
@@ -144,6 +162,8 @@ const layout = {
   },
   canvas: canvasSettings,
   balls: ballsConfig,
-  socialLinks
+  socialLinks,
+  skills_list
 };
+
 export default layout;

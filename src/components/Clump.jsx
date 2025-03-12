@@ -56,7 +56,7 @@ const Clump = React.forwardRef(({
   size = 1,
   forceMultiplier = -40,
   initialSpread = 20,
-  textureUrl = "/cross.jpg",
+  textureUrl = "./cross.jpg",
   config,
   ...props 
 }, forwardedRef) => {

@@ -126,7 +126,6 @@ const ProjectsSection = ({ theme = 'light' }) => {
       padding: isMobile ? '3rem 1rem' : '6rem 2rem',
       position: 'relative',
       zIndex: 2,
-      marginTop: '50vh',
       background: isDark ? 'rgba(18, 18, 18, 0.40)' : 'rgba(255, 255, 255, 0.40)',
       backdropFilter: 'blur(10px)',
       pointerEvents: 'all',

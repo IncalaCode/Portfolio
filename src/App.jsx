@@ -9,6 +9,7 @@ import layout from './data';
 import ThemeToggleButton from './components/themetogglebutton';
 import ProjectsSection from './components/ProjectsSection';
 import Footer from './components/footer';
+import AboutMeSection from './components/AboutMeSection';
 
 const App = () => {
   const { canvas, balls } = layout;
@@ -66,6 +67,7 @@ const App = () => {
       </div>
     
           <HeroSection theme={theme} />
+          <AboutMeSection theme={theme} />
           <ProjectsSection theme={theme} />
           <Footer theme={theme} />
       </div>
