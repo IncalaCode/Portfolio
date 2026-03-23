@@ -1,0 +1,644 @@
+.hero-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* CPU Background */
+.cpu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.6;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+/* Light Mode - Golden and Black Theme */
+.hero-container.light-mode {
+  background: linear-gradient(135deg, #FFF8DC 0%, #FFFACD 100%);
+  color: #000;
+}
+
+.hero-container.light-mode .hero-title {
+  background: linear-gradient(135deg, #000000, #2c2c2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.hero-container.light-mode .hero-subtitle {
+  color: #000;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.hero-container.light-mode .hero-description {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Top Navigation */
+.top-nav {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000;
+  position: relative;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn svg {
+  color: #000;
+}
+
+/* Dark Mode Button Styles */
+.hero-container:not(.light-mode) .nav-btn:hover {
+  background: #FFD700;
+}
+
+.hero-container:not(.light-mode) .nav-btn:hover svg {
+  color: #000;
+}
+
+/* Light Mode Button Styles */
+.hero-container.light-mode .nav-btn {
+  background: #000;
+}
+
+.hero-container.light-mode .nav-btn svg {
+  color: #FFD700;
+}
+
+.hero-container.light-mode .nav-btn:hover {
+  background: #FFD700;
+}
+
+.hero-container.light-mode .nav-btn:hover svg {
+  color: #000;
+}
+
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff !important;
+  padding: 0;
+}
+
+.hero-container.light-mode .theme-toggle-btn {
+  background: #000 !important;
+}
+
+.hero-container.light-mode .theme-toggle-btn svg {
+  color: #FFD700 !important;
+}
+
+/* Audio Line and Wave Animation */
+.audio-line {
+  width: 20px;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.hero-container.light-mode .audio-line {
+  background: #FFD700;
+}
+
+.audio-btn.playing .audio-line {
+  display: none;
+}
+
+.audio-btn.playing {
+  background: #FFD700 !important;
+}
+
+.audio-wave {
+  display: none;
+  gap: 2px;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+}
+
+.audio-btn.playing .audio-wave {
+  display: flex;
+}
+
+.audio-wave span {
+  width: 2px;
+  height: 4px;
+  background: #000;
+  border-radius: 1px;
+  animation: wave-single 0.8s ease-in-out infinite;
+}
+
+.hero-container.light-mode .audio-wave span {
+  background: #000;
+}
+
+.audio-wave span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.audio-wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.audio-wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.audio-wave span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.audio-wave span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.audio-wave span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.audio-wave span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.audio-wave span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+@keyframes wave-single {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 14px;
+  }
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f5f5f5;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  clip-path: inset(0% 0% 100% 0%);
+}
+
+/* Light Mode Menu */
+.menu-overlay.light-mode {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.menu-overlay.light-mode .menu-item {
+  color: #FFD700;
+}
+
+.menu-overlay.light-mode .menu-item:hover {
+  color: #FFA500;
+}
+
+.menu-overlay.light-mode .menu-dot {
+  background: #FFD700;
+}
+
+.menu-overlay.light-mode .menu-item:hover .menu-dot {
+  background: #FFA500;
+}
+
+.menu-overlay.light-mode .talk-btn {
+  background: #FFD700;
+  color: #000;
+}
+
+.menu-overlay.light-mode .talk-btn:hover {
+  background: #FFA500;
+}
+
+.menu-overlay.light-mode .close-btn {
+  background: #000;
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.menu-overlay.light-mode .close-btn:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.menu-overlay.light-mode .dot {
+  background: #000;
+}
+
+/* Menu Header */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  opacity: 1;
+}
+
+.menu-action-btn {
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  opacity: 1;
+}
+
+.talk-btn {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+.talk-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.close-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFD700;
+}
+
+.dots {
+  display: flex;
+  gap: 4px;
+}
+
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Menu Content */
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 1;
+}
+
+.menu-item:hover {
+  color: #FFD700;
+  transform: translateX(20px);
+}
+
+.menu-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.menu-item:hover .menu-dot {
+  background: #FFD700;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  pointer-events: auto;
+  user-select: none;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 6rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -3px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  line-height: 100%;
+  text-transform: uppercase;
+  perspective: 1000px;
+}
+
+.hero-title .char {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  color: #fff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  line-height: 100%;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 2rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom Left Info */
+.bottom-left-info {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-left-info:hover {
+  opacity: 1;
+}
+
+.info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1.3;
+}
+
+.info-title {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero-container.light-mode .info-title {
+  color: #666;
+}
+
+.info-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hero-container.light-mode .info-name {
+  color: #000;
+}
+
+.info-role {
+  font-size: 1rem;
+  color: #FFD700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.hero-container.light-mode .info-role {
+  color: #FFA500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cpu-background {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    opacity: 0.4;
+  }
+
+  .top-nav {
+    top: 1rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hero-content {
+    padding: 0 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin: 0.8rem 0;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-overlay {
+    padding: 1.5rem;
+  }
+
+  .menu-header {
+    margin-bottom: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .menu-item {
+    font-size: 2rem;
+    gap: 0.5rem;
+  }
+
+  .menu-item:hover {
+    transform: translateX(10px);
+  }
+
+  .menu-action-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+    justify-content: center;
+  }
+
+  .bottom-left-info {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .info-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+
+  .info-name {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .info-role {
+    font-size: 0.65rem;
+  }
+
+  .audio-line {
+    width: 16px;
+  }
+
+  .audio-wave span {
+    width: 1.5px;
+    height: 6px;
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      height: 4px;
+    }
+    50% {
+      height: 14px;
+    }
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-description {
+    font-size: 0.8rem;
+  }
+
+  .menu-item {
+    font-size: 1.5rem;
+  }
+
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+}

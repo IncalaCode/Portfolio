@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
+
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.dark .loading-page {
+  background-color: #000000;
+}
+
+:root:not(.dark) .loading-page {
+  background-color: #ffffff;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-container canvas {
+  display: block;
+  outline: none;
+  border: none;
+}
+
+.loading-percentage {
+  position: fixed;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, 80px);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  z-index: 10;
+  font-size: xx-small;
+
+}
+
+.loading-percentage {
+  position: fixed;
+  bottom: 45%;
+  left: 50%;
+  transform: translate(-50%, 80px);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  z-index: 10;
+  font-size: xx-small;
+}

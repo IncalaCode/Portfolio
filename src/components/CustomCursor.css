@@ -1,0 +1,86 @@
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Cursor Dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #FFD700;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.pointer {
+  width: 4px;
+  height: 4px;
+  background: #FFA500;
+}
+
+/* Cursor Outline */
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FFD700;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-outline.pointer {
+  width: 60px;
+  height: 60px;
+  border-color: #FFA500;
+}
+
+/* Light mode cursor colors */
+.hero-container.light-mode ~ .cursor-dot {
+  background: #000;
+}
+
+.hero-container.light-mode ~ .cursor-dot.pointer {
+  background: #FFA500;
+}
+
+.hero-container.light-mode ~ .cursor-outline {
+  border-color: #000;
+}
+
+.hero-container.light-mode ~ .cursor-outline.pointer {
+  border-color: #FFA500;
+}
+
+/* Restore cursor for inputs and textareas */
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+
+/* Mobile - show default cursor */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
