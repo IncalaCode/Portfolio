@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const AnimatedLogo = ({ className = "w-10 h-10", showComet = true }) => {
+const AnimatedLogo = ({ className = "w-10 h-10" }) => {
   // All the path data from the original SVG
   const paths = [
     "M220.37,2.42l10.58,3.25c-8.12-2.1-18.79-2.54-49.33,1.4-10.98,1.24-19.51.8-20.74-1.08,1.56-3.62,40.81-7.61,52.49-5.34l6.99,1.76",

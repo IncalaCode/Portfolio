@@ -269,7 +269,7 @@ const AboutSection = () => {
       content: (
         <div>
           <a 
-            href="https://latestfitness.com" 
+            href="https://latestfitnessethiopia.com/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 text-lg md:text-xl font-bold mb-4 transition-colors ${isDark ? 'text-white hover:text-yellow-500' : 'text-black hover:text-orange-600'}`}

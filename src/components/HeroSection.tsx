@@ -104,7 +104,7 @@ const HeroSection = () => {
         const text = titleRef.current.textContent || '';
         titleRef.current.innerHTML = text
           .split('')
-          .map((char, i) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
+          .map((char, _) => `<span class="char" style="display: inline-block;">${char === ' ' ? '&nbsp;' : char}</span>`)
           .join('');
 
         gsap.from(titleRef.current.querySelectorAll('.char'), {

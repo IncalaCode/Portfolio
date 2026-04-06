@@ -4,7 +4,7 @@ import './TubesCursor.css';
 const TubesCursor = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const tubesAppRef = useRef<any>(null);
-  const [darkMode, setDarkMode] = useState(true);
+  const [_, setDarkMode] = useState(true);
 
   useEffect(() => {
     // Initialize theme
